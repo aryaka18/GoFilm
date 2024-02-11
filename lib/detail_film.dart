@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'list_high_rate_movies.dart';
+import 'movie_review.dart';
 
 class MovieDetailScreenn extends StatelessWidget {
   final Movie movie;
-  MovieDetailScreenn({required this.movie});
+  const MovieDetailScreenn({required this.movie});
 
   @override
   Widget build(BuildContext context) {
@@ -49,23 +50,23 @@ class MovieDetailScreenn extends StatelessWidget {
                       children: [
                         Text(
                           movie.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Text(
                           'Year: ${movie.year}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             color: Colors.grey,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Text(
                           'Hours: ${movie.hours}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             color: Colors.grey,
                           ),
@@ -83,7 +84,7 @@ class MovieDetailScreenn extends StatelessWidget {
                     padding: const EdgeInsets.all(5.0),
                     child: Text(
                       movie.imdb,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 15,
                       ),
                     ),
@@ -95,11 +96,12 @@ class MovieDetailScreenn extends StatelessWidget {
               padding: const EdgeInsets.only(left: 16, right: 16, bottom: 30 ),
               child: Text(
                 movie.description,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                 ),
               ),
             ),
+            MovieReviewWidget(movieTitle: movie.title),
           ],
         ),
       ),
